@@ -8,6 +8,7 @@ import 'package:jiko_langu/src/widgets/app_dropdown.dart';
 import 'package:jiko_langu/src/widgets/app_input_text.dart';
 import 'package:jiko_langu/src/widgets/app_snackbar.dart';
 import 'package:jiko_langu/src/widgets/app_text.dart';
+import 'package:jiko_langu/src/widgets/app_toggle_button.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -17,21 +18,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  final dataService _dataService = dataService();
-  TextEditingController age = TextEditingController();
-  TextEditingController restingBloodPressure = TextEditingController();
-  TextEditingController cholesterol = TextEditingController();
-  TextEditingController thalach = TextEditingController();
-  TextEditingController exang = TextEditingController();
-  TextEditingController oldPeak = TextEditingController();
-  TextEditingController majorVessel = TextEditingController();
-  var sex;
-  var chestPain;
-  var fastingBloodSugar;
-  var Electrocardiographic;
-  var slope;
-  var thalassemia;
-  var heartDisease;
+  bool value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +50,11 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.all(8.0),
                 child: AppText(txt: 'Welcome to JIKOLANGU! Control your stove at your pace and prepare your food freely as you wish', size: 20, color: AppConst.secondary,),
               ),
-            )
+            ),
+            SizedBox(height: 30,),
+            AppToggleButton(title: 'Bluetooth', value: value, onChanged: (newValue) {
+              value = !value;
+            })
           ],
         ));
   }
