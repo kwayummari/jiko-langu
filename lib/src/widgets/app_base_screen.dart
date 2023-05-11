@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:jiko_langu/src/utils/app_const.dart';
 
 class AppBaseScreen extends StatelessWidget {
   final Widget child;
@@ -22,7 +23,7 @@ class AppBaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgcolor ?? HexColor('B22121'),
+      backgroundColor: bgcolor ?? AppConst.secondary,
       appBar: appBar,
       body: SingleChildScrollView(
         child: Stack(

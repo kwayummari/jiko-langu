@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:jiko_langu/src/utils/app_const.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:jiko_langu/routes/route-names.dart';
 import 'package:jiko_langu/src/service/login.dart';
@@ -27,6 +28,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
+      bgcolor: AppConst.black,
       child: Form(
           key: _formKey,
           child: Column(
@@ -35,16 +37,13 @@ class _LoginState extends State<Login> {
                 height: 50,
               ),
               AppText(
-                size: 20,
-                txt: 'jiko_langu',
-                color: Colors.black,
+                size: 30,
+                txt: 'JIKO LANGU',
+                weight: FontWeight.w900,
+                color: AppConst.primary,
               ),
               SizedBox(
-                height: 20,
-              ),
-              Image.asset('assets/logo.png'),
-              SizedBox(
-                height: 20,
+                height: 40,
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 250),

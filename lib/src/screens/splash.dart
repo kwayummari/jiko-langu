@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:jiko_langu/src/utils/app_const.dart';
+import 'package:jiko_langu/src/widgets/app_base_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:jiko_langu/routes/route-names.dart';
 
@@ -64,14 +66,19 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: HexColor('#B22121'),
-      body: Center(
-          child: SpinKitPumpingHeart(
-        duration: const Duration(seconds: 3),
-        size: 100,
-        color: HexColor('#000000'),
-      )),
+    return AppBaseScreen(
+      bgcolor: AppConst.primary,
+      child: Column(
+        children: [
+          SizedBox(height: 200,),
+          Center(
+              child: SpinKitHourGlass(
+            duration: const Duration(seconds: 3),
+            size: 100,
+            color: HexColor('#000000'),
+          )),
+        ],
+      ),
     );
   }
 }

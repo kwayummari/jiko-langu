@@ -1,7 +1,7 @@
 import 'package:hexcolor/hexcolor.dart';
 
 abstract class AppConst {
-  static var primary = HexColor('B22121');
+  static var primary = HexColor('#49D617');
   static var secondary = HexColor('#ffffff');
   static var black = HexColor('#000000');
 //   static var grey = Colors.grey;
