@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tabiri/src/utils/app_const.dart';
-import 'package:tabiri/src/widgets/app_base_screen.dart';
-import 'package:tabiri/src/widgets/app_text.dart';
+import 'package:jiko_langu/src/utils/app_const.dart';
+import 'package:jiko_langu/src/widgets/app_base_screen.dart';
+import 'package:jiko_langu/src/widgets/app_text.dart';
 
 class results extends StatefulWidget {
   const results({super.key});

@@ -3,8 +3,8 @@
 // import 'package:flutter/foundation.dart';
 // import 'package:flutter_dotenv/flutter_dotenv.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:tabiri/src/screens/login/login_service.dart';
-// import 'package:tabiri/src/utils/app_const.dart';
+// import 'package:jiko_langu/src/screens/login/login_service.dart';
+// import 'package:jiko_langu/src/utils/app_const.dart';
 
 // class Api {
 //   final dio = createDio();

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tabiri/routes/route-names.dart';
+import 'package:jiko_langu/routes/route-names.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);

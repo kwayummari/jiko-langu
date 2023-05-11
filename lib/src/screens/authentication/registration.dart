@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:tabiri/routes/route-names.dart';
-import 'package:tabiri/src/service/registration.dart';
-import 'package:tabiri/src/widgets/app_base_screen.dart';
-import 'package:tabiri/src/widgets/app_button.dart';
-import 'package:tabiri/src/widgets/app_card.dart';
-import 'package:tabiri/src/widgets/app_container.dart';
-import 'package:tabiri/src/widgets/app_input_text.dart';
-import 'package:tabiri/src/widgets/app_snackbar.dart';
-import 'package:tabiri/src/widgets/app_text.dart';
+import 'package:jiko_langu/routes/route-names.dart';
+import 'package:jiko_langu/src/service/registration.dart';
+import 'package:jiko_langu/src/widgets/app_base_screen.dart';
+import 'package:jiko_langu/src/widgets/app_button.dart';
+import 'package:jiko_langu/src/widgets/app_card.dart';
+import 'package:jiko_langu/src/widgets/app_container.dart';
+import 'package:jiko_langu/src/widgets/app_input_text.dart';
+import 'package:jiko_langu/src/widgets/app_snackbar.dart';
+import 'package:jiko_langu/src/widgets/app_text.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -38,7 +38,7 @@ class _RegistrationState extends State<Registration> {
               ),
               AppText(
                 size: 20,
-                txt: 'TABIRI',
+                txt: 'jiko_langu',
                 color: Colors.black,
               ),
               SizedBox(

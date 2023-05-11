@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tabiri/src/utils/app_const.dart';
+import 'package:jiko_langu/src/utils/app_const.dart';
 
 class AppDropdownTextFormField extends StatelessWidget {
   final String labelText;

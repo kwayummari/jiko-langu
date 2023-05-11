@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tabiri/src/screens/authentication/login.dart';
-import 'package:tabiri/src/screens/authentication/registration.dart';
-import 'package:tabiri/src/screens/home/homepage.dart';
-import 'package:tabiri/src/screens/results/results.dart';
-import 'package:tabiri/src/screens/splash.dart';
-import 'package:tabiri/routes/route-names.dart';
+import 'package:jiko_langu/src/screens/authentication/login.dart';
+import 'package:jiko_langu/src/screens/authentication/registration.dart';
+import 'package:jiko_langu/src/screens/home/homepage.dart';
+import 'package:jiko_langu/src/screens/results/results.dart';
+import 'package:jiko_langu/src/screens/splash.dart';
+import 'package:jiko_langu/routes/route-names.dart';
 
 
 final Map<String, WidgetBuilder> routes = {

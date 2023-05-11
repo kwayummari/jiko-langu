@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             ],
           ),
       debugShowCheckedModeBanner: false,
-      title: 'Tabiri',
+      title: 'jiko_langu',
       theme: ThemeData(
           // timePickerTheme: Theme.of(context).primaryColor,
           cardColor: Colors.green.shade900,

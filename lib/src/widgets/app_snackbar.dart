@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tabiri/src/widgets/app_text.dart';
+import 'package:jiko_langu/src/widgets/app_text.dart';
 
 class AppSnackbar extends SnackBar {
   final String? response;

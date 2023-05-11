@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tabiri/routes/route-names.dart';
-import 'package:tabiri/src/service/data.dart';
-import 'package:tabiri/src/utils/app_const.dart';
-import 'package:tabiri/src/widgets/app_base_screen.dart';
-import 'package:tabiri/src/widgets/app_button.dart';
-import 'package:tabiri/src/widgets/app_dropdown.dart';
-import 'package:tabiri/src/widgets/app_input_text.dart';
-import 'package:tabiri/src/widgets/app_snackbar.dart';
-import 'package:tabiri/src/widgets/app_text.dart';
+import 'package:jiko_langu/routes/route-names.dart';
+import 'package:jiko_langu/src/service/data.dart';
+import 'package:jiko_langu/src/utils/app_const.dart';
+import 'package:jiko_langu/src/widgets/app_base_screen.dart';
+import 'package:jiko_langu/src/widgets/app_button.dart';
+import 'package:jiko_langu/src/widgets/app_dropdown.dart';
+import 'package:jiko_langu/src/widgets/app_input_text.dart';
+import 'package:jiko_langu/src/widgets/app_snackbar.dart';
+import 'package:jiko_langu/src/widgets/app_text.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
