@@ -57,41 +57,35 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       height: 30,
                     ),
-                    AppContainer(
-                        width: 340,
-                        bottom: 24,
-                        child: AppInputText(
-                          textfieldcontroller: id,
-                          icon: Icon(
-                            Icons.person,
-                            color: AppConst.black,
-                          ),
-                          label: 'Id',
-                          obscure: false,
-                          isemail: true,
-                          fillcolor: AppConst.secondary,
-                        )),
-                    AppContainer(
-                        width: 340,
-                        bottom: 0,
-                        child: AppInputText(
-                          textfieldcontroller: password,
-                          icon: Icon(
-                            Icons.lock,
-                            color: AppConst.black,
-                          ),
-                          label: 'Password',
-                          obscure: dont_show_password,
-                          suffixicon: IconButton(
-                              onPressed: (() {
-                                setState(() {
-                                  dont_show_password = !dont_show_password;
-                                });
-                              }),
-                              icon: Icon(dont_show_password ? Icons.visibility_off : Icons.visibility)),
-                          isemail: false,
-                          fillcolor: AppConst.secondary,
-                        )),
+                    AppInputText(
+                      textfieldcontroller: id,
+                      icon: Icon(
+                        Icons.person,
+                        color: AppConst.black,
+                      ),
+                      label: 'Id',
+                      obscure: false,
+                      isemail: true,
+                      fillcolor: AppConst.secondary,
+                    ),
+                    AppInputText(
+                      textfieldcontroller: password,
+                      icon: Icon(
+                        Icons.lock,
+                        color: AppConst.black,
+                      ),
+                      label: 'Password',
+                      obscure: dont_show_password,
+                      suffixicon: IconButton(
+                          onPressed: (() {
+                            setState(() {
+                              dont_show_password = !dont_show_password;
+                            });
+                          }),
+                          icon: Icon(dont_show_password ? Icons.visibility_off : Icons.visibility)),
+                      isemail: false,
+                      fillcolor: AppConst.secondary,
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(left: 150),
                       child: AppText(
@@ -104,7 +98,7 @@ class _LoginState extends State<Login> {
                       height: 20,
                     ),
                     AppContainer(
-                      width: 350,
+                      width: 420,
                       height: 50,
                       bottom: 0,
                       child: AppButton(
