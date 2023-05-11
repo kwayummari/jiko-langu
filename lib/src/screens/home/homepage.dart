@@ -53,8 +53,11 @@ class _HomepageState extends State<Homepage> {
             ),
             SizedBox(height: 30,),
             AppToggleButton(title: 'Bluetooth', value: value, onChanged: (newValue) {
-              value = !value;
+              setState(() {
+                value = !value;
+              });
             })
+
           ],
         ));
   }
