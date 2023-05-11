@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:jiko_langu/src/utils/app_const.dart';
 import 'package:jiko_langu/src/widgets/app_text.dart';
 
 class AppInputText extends StatelessWidget {
@@ -44,7 +45,7 @@ class AppInputText extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0),
           ),
           label: Container(
-            color: labelColor ?? HexColor('#e7d4d3'),
+            color: labelColor ?? AppConst.secondary,
             child: AppText(
               txt: label,
               size: 15,

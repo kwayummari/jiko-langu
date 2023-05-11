@@ -30,7 +30,7 @@ class AppDropdownTextFormField extends StatelessWidget {
         ),
         child: DropdownButtonHideUnderline(
           child: DropdownButton<String>(
-            value: value != null ? value : null,
+            value: value,
             hint: Text(labelText),
             isDense: true,
             onChanged: onChanged,
