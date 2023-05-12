@@ -18,7 +18,11 @@ class AppToggleButton extends StatelessWidget {
         width: 350,
         height: 70,
         decoration: BoxDecoration(
-            color: AppConst.secondary,
+            gradient: LinearGradient(
+              colors: [AppConst.primary, AppConst.black],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
             borderRadius: BorderRadius.all(
               Radius.circular(20.0),
             ),
@@ -27,7 +31,7 @@ class AppToggleButton extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Spacer(),
-            AppText(txt: title, size: 30, color: AppConst.black, weight: FontWeight.w900,),
+            AppText(txt: title, size: 30, color: AppConst.secondary, weight: FontWeight.w900,),
             SizedBox(width: 16.0),
             Transform.scale(
               scale: 1.5,
