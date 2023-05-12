@@ -70,7 +70,7 @@ class _SplashState extends State<Splash> {
       bgcolor: AppConst.primary,
       child: Column(
         children: [
-          SizedBox(height: 200,),
+          SizedBox(height: MediaQuery.of(context).size.height /2.5,),
           Center(
               child: SpinKitHourGlass(
             duration: const Duration(seconds: 3),
