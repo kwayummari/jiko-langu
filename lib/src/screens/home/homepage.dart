@@ -52,6 +52,11 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             SizedBox(height: 30,),
+            CircleAvatar(
+              radius: 100,
+              backgroundImage: AssetImage('assets/home.jpg'),
+            ),
+            SizedBox(height: 50,),
             AppToggleButton(title: 'Bluetooth', value: value, onChanged: (newValue) {
               setState(() {
                 value = !value;
