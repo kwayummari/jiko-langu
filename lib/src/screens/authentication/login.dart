@@ -33,22 +33,12 @@ class _LoginState extends State<Login> {
           key: _formKey,
           child: Column(
             children: [
-              SizedBox(
-                height: 100,
-              ),
-              AppText(
-                size: 30,
-                txt: 'JIKO LANGU',
-                weight: FontWeight.w900,
-                color: AppConst.primary,
-              ),
-              SizedBox(
-                height: 40,
-              ),
+              Image.asset('assets/logo.png', height: 250,),
               AppText(
                 txt: 'LOGIN',
-                size: 20,
-                color: AppConst.secondary,
+                size: 30,
+                color: AppConst.primary,
+                weight: FontWeight.w900,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -124,7 +114,7 @@ class _LoginState extends State<Login> {
                                   'email', id.text.toString());
                               if (response.toString() == 'success')
                                 Navigator.pushNamedAndRemoveUntil(
-                                    context, RouteNames.home, (_) => false);
+                                    context, RouteNames.bottomNavigationBar, (_) => false);
                             }
 
                             // handle successful login response

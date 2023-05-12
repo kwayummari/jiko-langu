@@ -125,15 +125,15 @@ class _RegistrationState extends State<Registration> {
                       padding: const EdgeInsets.only(left: 120),
                       child: AppText(
                         size: 15,
-                        txt: 'New user? sign up',
+                        txt: 'Already have an account? Sign In',
                         color: AppConst.primary,
                       ),
                     ),
                   ),
                   SizedBox(height: 20,),
-                  AppContainer(
+                  Container(
+                    height: 50,
                     width: 370,
-                    bottom: 100,
                     child: AppButton(
                       label: 'SIGN UP',
                       onPress: () async {
@@ -164,17 +164,6 @@ class _RegistrationState extends State<Registration> {
                     ),
                   )
                 ],
-              ),
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(context, RouteNames.login),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 120),
-                  child: AppText(
-                    size: 15,
-                    txt: 'Already have an account? Login',
-                    color: AppConst.secondary,
-                  ),
-                ),
               ),
             ],
           )),

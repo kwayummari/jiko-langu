@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jiko_langu/src/screens/authentication/login.dart';
 import 'package:jiko_langu/src/screens/authentication/registration.dart';
+import 'package:jiko_langu/src/screens/bottomNavigationBar/bottomNavigationBar.dart';
 import 'package:jiko_langu/src/screens/home/homepage.dart';
 import 'package:jiko_langu/src/screens/results/results.dart';
 import 'package:jiko_langu/src/screens/splash.dart';
@@ -13,4 +14,5 @@ final Map<String, WidgetBuilder> routes = {
   RouteNames.splash: (context) => Splash(),
   RouteNames.home:(context) => Homepage(),
   RouteNames.results:(context) => results(),
+  RouteNames.bottomNavigationBar:(context) => bottomNavigation(),
 };
