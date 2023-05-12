@@ -7,7 +7,7 @@ abstract class AppConst {
   static var black = HexColor('#000000');
   static var grey = Colors.grey;
   static var greyshade200 = Colors.grey.shade200;
-//   static var brown = HexColor('#452612');
+  static var transparent = Colors.transparent;
 //   static var whiteOpacity = Colors.white.withOpacity(0.8);
 //   static var transparent = Colors.transparent;
 }
