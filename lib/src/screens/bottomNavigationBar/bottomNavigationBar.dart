@@ -44,11 +44,15 @@ class _bottomNavigationState extends State<bottomNavigation> {
                 backgroundColor: AppConst.black,
                 items: [
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.home), label: 'Home'),
+                      icon: CircleAvatar(
+                        backgroundColor: AppConst.primary,
+                          child: Icon(Icons.home, color: AppConst.secondary,)), label: 'Home'),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.fir), label: 'Home'),
+                      icon: CircleAvatar(backgroundColor: AppConst.primary,child: Icon(Icons.fireplace, color: AppConst.secondary,)), label: 'Controls'),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.person_search_sharp), label: 'Profile'),
+                      icon: CircleAvatar(backgroundColor: AppConst.primary,child: Icon(Icons.timer, color: AppConst.secondary,)), label: 'Timer'),
+                  BottomNavigationBarItem(
+                      icon: CircleAvatar(backgroundColor: AppConst.primary,child: Icon(Icons.help, color: AppConst.secondary,)), label: 'Help'),
                 ],
                 currentIndex: index,
                 onTap: (index) {
