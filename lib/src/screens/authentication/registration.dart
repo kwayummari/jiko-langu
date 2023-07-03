@@ -142,7 +142,8 @@ class _RegistrationState extends State<Registration> {
                               password.text,
                               phone.text,
                               name.text,
-                              id.text);
+                              id.text
+                              );
                           AppSnackbar(
                             isError: false,
                             response: response.toString(),
