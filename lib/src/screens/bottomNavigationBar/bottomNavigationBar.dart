@@ -18,7 +18,7 @@ class _bottomNavigationState extends State<bottomNavigation> {
   int index = 0;
   final Screen = [
     Homepage(),
-    control(),
+    Control(),
     setTimer(),
     help()
   ];

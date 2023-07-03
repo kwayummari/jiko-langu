@@ -1,16 +1,84 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:jiko_langu/src/utils/app_const.dart';
 import 'package:jiko_langu/src/widgets/app_base_screen.dart';
 import 'package:jiko_langu/src/widgets/app_text.dart';
 
-class control extends StatefulWidget {
-  const control({Key? key}) : super(key: key);
+class Control extends StatefulWidget {
+  const Control({Key? key}) : super(key: key);
 
   @override
-  State<control> createState() => _controlState();
+  State<Control> createState() => _ControlState();
 }
 
-class _controlState extends State<control> {
+class _ControlState extends State<Control> {
+  BluetoothConnection? connection;
+  bool isConnected = false;
+  List<BluetoothDevice> devices = [];
+  BluetoothDevice? selectedDevice;
+
+  Future<void> _discoverDevices() async {
+    devices = await FlutterBluetoothSerial.instance.getBondedDevices();
+    setState(() {});
+  }
+
+  Future<void> _connectToDevice() async {
+    if (selectedDevice == null) {
+      print('No device selected.');
+      return;
+    }
+
+    try {
+      if (connection != null) {
+        await connection!.close();
+        setState(() {
+          connection = null;
+          isConnected = false;
+        });
+      }
+
+      BluetoothConnection.toAddress(selectedDevice!.address).then((newConnection) {
+        setState(() {
+          connection = newConnection;
+          isConnected = true;
+        });
+      }).catchError((error) {
+        print('Failed to connect: $error');
+      });
+    } catch (error) {
+      print('Failed to connect: $error');
+    }
+  }
+
+  void _sendDigit(int digit) {
+  if (connection != null && connection!.isConnected) {
+    Uint8List data = Uint8List.fromList([digit]);
+    connection!.output.add(data);
+    connection!.output.allSent.then((_) {
+      print('Digit sent: $digit');
+    }).catchError((error) {
+      print('Failed to send digit: $error');
+    });
+  } else {
+    print('Not connected to a Bluetooth device.');
+  }
+}
+
+  @override
+  void initState() {
+    super.initState();
+    _discoverDevices();
+  }
+
+  @override
+  void dispose() {
+    if (connection != null) {
+      connection!.close();
+    }
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
@@ -32,10 +100,13 @@ class _controlState extends State<control> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: AppConst.primary,
-                    child: AppText(txt: 'On',size: 30, color: AppConst.secondary, weight: FontWeight.w900,),
+                  GestureDetector(
+                    onTap: () => _sendDigit(0),
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundColor: AppConst.primary,
+                      child: AppText(txt: 'On',size: 30, color: AppConst.secondary, weight: FontWeight.w900,),
+                    ),
                   ),
                   Container(
                     padding: EdgeInsets.all(3.0),
@@ -46,14 +117,17 @@ class _controlState extends State<control> {
                         width: 3.0,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.transparent,
-                      child: AppText(
-                        txt: '1',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
+                    child: GestureDetector(
+                      onTap: () => _sendDigit(1),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: AppConst.transparent,
+                        child: AppText(
+                          txt: '1',
+                          size: 30,
+                          color: AppConst.secondary,
+                          weight: FontWeight.w900,
+                        ),
                       ),
                     ),
                   ),
@@ -67,14 +141,17 @@ class _controlState extends State<control> {
                         width: 3.0,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.transparent,
-                      child: AppText(
-                        txt: '2',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
+                    child: GestureDetector(
+                      onTap: () => _sendDigit(2),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: AppConst.transparent,
+                        child: AppText(
+                          txt: '2',
+                          size: 30,
+                          color: AppConst.secondary,
+                          weight: FontWeight.w900,
+                        ),
                       ),
                     ),
                   ),
@@ -96,14 +173,17 @@ class _controlState extends State<control> {
                         width: 3.0,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.transparent,
-                      child: AppText(
-                        txt: '3',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
+                    child: GestureDetector(
+                      onTap: () => _sendDigit(3),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: AppConst.transparent,
+                        child: AppText(
+                          txt: '3',
+                          size: 30,
+                          color: AppConst.secondary,
+                          weight: FontWeight.w900,
+                        ),
                       ),
                     ),
                   ),
@@ -116,14 +196,17 @@ class _controlState extends State<control> {
                         width: 3.0,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.transparent,
-                      child: AppText(
-                        txt: '4',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
+                    child: GestureDetector(
+                      onTap: () => _sendDigit(4),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: AppConst.transparent,
+                        child: AppText(
+                          txt: '4',
+                          size: 30,
+                          color: AppConst.secondary,
+                          weight: FontWeight.w900,
+                        ),
                       ),
                     ),
                   ),
@@ -136,14 +219,17 @@ class _controlState extends State<control> {
                         width: 3.0,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.transparent,
-                      child: AppText(
-                        txt: '5',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
+                    child: GestureDetector(
+                      onTap: () => _sendDigit(5),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: AppConst.transparent,
+                        child: AppText(
+                          txt: '5',
+                          size: 30,
+                          color: AppConst.secondary,
+                          weight: FontWeight.w900,
+                        ),
                       ),
                     ),
                   ),
@@ -165,14 +251,17 @@ class _controlState extends State<control> {
                         width: 3.0,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.transparent,
-                      child: AppText(
-                        txt: '6',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
+                    child: GestureDetector(
+                      onTap: () => _sendDigit(6),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: AppConst.transparent,
+                        child: AppText(
+                          txt: '6',
+                          size: 30,
+                          color: AppConst.secondary,
+                          weight: FontWeight.w900,
+                        ),
                       ),
                     ),
                   ),
@@ -185,21 +274,27 @@ class _controlState extends State<control> {
                         width: 3.0,
                       ),
                     ),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.transparent,
-                      child: AppText(
-                        txt: '7',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
+                    child: GestureDetector(
+                      onTap: () => _sendDigit(7),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: AppConst.transparent,
+                        child: AppText(
+                          txt: '7',
+                          size: 30,
+                          color: AppConst.secondary,
+                          weight: FontWeight.w900,
+                        ),
                       ),
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: AppConst.grey,
-                    child: AppText(txt: 'Off',size: 30, color: AppConst.secondary, weight: FontWeight.w900,),
+                  GestureDetector(
+                    onTap: () => _sendDigit(8),
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundColor: AppConst.grey,
+                      child: AppText(txt: 'Off',size: 30, color: AppConst.secondary, weight: FontWeight.w900,),
+                    ),
                   ),
                 ],
               ),
