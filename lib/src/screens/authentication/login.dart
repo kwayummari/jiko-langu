@@ -31,7 +31,10 @@ class _LoginState extends State<Login> {
           key: _formKey,
           child: Column(
             children: [
-              Image.asset('assets/logo.png', height: 250,),
+              Image.asset(
+                'assets/logo1.png',
+                height: 250,
+              ),
               AppText(
                 txt: 'LOGIN',
                 size: 30,
@@ -70,7 +73,9 @@ class _LoginState extends State<Login> {
                               dont_show_password = !dont_show_password;
                             });
                           }),
-                          icon: Icon(dont_show_password ? Icons.visibility_off : Icons.visibility)),
+                          icon: Icon(dont_show_password
+                              ? Icons.visibility_off
+                              : Icons.visibility)),
                       isemail: false,
                       fillcolor: AppConst.secondary,
                     ),
@@ -92,13 +97,11 @@ class _LoginState extends State<Login> {
                       child: AppButton(
                         label: 'LOGIN',
                         onPress: () async {
-                          Navigator.pushNamedAndRemoveUntil(
-                                    context, RouteNames.bottomNavigationBar, (_) => false);
+                          Navigator.pushNamedAndRemoveUntil(context,
+                              RouteNames.bottomNavigationBar, (_) => false);
                           try {
-                            final response = await _apiService.login(
-                                context,
-                                id.text.toString(),
-                                password.text.toString());
+                            final response = await _apiService.login(context,
+                                id.text.toString(), password.text.toString());
                             AppSnackbar(
                               isError: response.toString() == 'success'
                                   ? false
@@ -112,7 +115,9 @@ class _LoginState extends State<Login> {
                                   'email', id.text.toString());
                               if (response.toString() == 'success')
                                 Navigator.pushNamedAndRemoveUntil(
-                                    context, RouteNames.bottomNavigationBar, (_) => false);
+                                    context,
+                                    RouteNames.bottomNavigationBar,
+                                    (_) => false);
                             }
 
                             // handle successful login response
