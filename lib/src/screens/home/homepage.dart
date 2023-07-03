@@ -69,7 +69,7 @@ class _HomepageState extends State<Homepage> {
               padding: const EdgeInsets.all(8.0),
               child: AppText(
                 txt:
-                    'Welcome to JIKOLANGU! Control your stove at your pace and prepare your food freely as you wish',
+                    'Welcome to JIKO LANGU! Control your stove at your pace and prepare your food freely as you wish',
                 size: 20,
                 color: AppConst.secondary,
               ),
