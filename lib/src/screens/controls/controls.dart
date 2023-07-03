@@ -79,6 +79,17 @@ class _ControlState extends State<Control> {
     _discoverDevices();
   }
 
+  void _toggleBluetooth(bool newValue) async {
+    if (newValue) {
+      await bluetooth.requestEnable();
+    } else {
+      await bluetooth.requestDisable();
+    }
+    setState(() {
+      value = newValue;
+    });
+  }
+
   @override
   void dispose() {
     if (connection != null) {
