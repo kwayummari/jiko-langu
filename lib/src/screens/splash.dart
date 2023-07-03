@@ -38,9 +38,9 @@ class _SplashState extends State<Splash> {
   Future getValidationData() async {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
-    var id = sharedPreferences.get('id');
+    var ids = sharedPreferences.get('id');
     setState(() {
-      id = id;
+      id = ids;
     });
   }
 
