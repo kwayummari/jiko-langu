@@ -163,12 +163,12 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(3.0),
+                padding: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+                  color: AppConst.transparent,
                   border: Border.all(
-                    color: AppConst.primary,
-                    width: 3.0,
+                    color: Colors.black,
+                    width: 2.0,
                   ),
                 ),
                 child: GestureDetector(
@@ -186,12 +186,12 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(3.0),
+                padding: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+                  color: AppConst.transparent,
                   border: Border.all(
-                    color: AppConst.primary,
-                    width: 3.0,
+                    color: Colors.black,
+                    width: 2.0,
                   ),
                 ),
                 child: GestureDetector(
