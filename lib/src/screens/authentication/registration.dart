@@ -87,13 +87,13 @@ class _RegistrationState extends State<Registration> {
                     fillcolor: AppConst.secondary,
                   ),
                   AppInputText(
-                    textfieldcontroller: phone,
+                    textfieldcontroller: address,
                     icon: Icon(
                       Icons.location_history,
                       color: Colors.black,
                     ),
                     obscure: false,
-                    label: 'location',
+                    label: 'Address',
                     isemail: false,
                     fillcolor: AppConst.secondary,
                   ),
