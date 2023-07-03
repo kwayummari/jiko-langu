@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:jiko_langu/src/utils/app_const.dart';
 
 class AppBaseScreen extends StatelessWidget {
@@ -24,17 +23,26 @@ class AppBaseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgcolor ?? AppConst.secondary,
+      
       appBar: appBar,
       body: SingleChildScrollView(
-        child: Stack(
-          alignment: AlignmentDirectional.center,
-          children: [
-            Padding(
-              padding: padding ?? const EdgeInsets.all(16.0),
-              child: child,
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/background.jpg'),
+              fit: BoxFit.cover,
             ),
-            if (isLoading == true) const CircularProgressIndicator()
-          ],
+          ),
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Padding(
+                padding: padding ?? const EdgeInsets.all(16.0),
+                child: child,
+              ),
+              if (isLoading == true) const CircularProgressIndicator()
+            ],
+          ),
         ),
       ),
       floatingActionButton: floatingAction,
