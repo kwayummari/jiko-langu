@@ -28,14 +28,6 @@ class AppBaseScreen extends StatelessWidget {
         child: Stack(
           alignment: AlignmentDirectional.center,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/background.jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
             Padding(
               padding: padding ?? const EdgeInsets.all(16.0),
               child: child,

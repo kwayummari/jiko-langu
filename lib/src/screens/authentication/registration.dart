@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:jiko_langu/routes/route-names.dart';
 import 'package:jiko_langu/src/service/registration.dart';
 import 'package:jiko_langu/src/utils/app_const.dart';
 import 'package:jiko_langu/src/widgets/app_base_screen.dart';
 import 'package:jiko_langu/src/widgets/app_button.dart';
-import 'package:jiko_langu/src/widgets/app_container.dart';
 import 'package:jiko_langu/src/widgets/app_input_text.dart';
 import 'package:jiko_langu/src/widgets/app_snackbar.dart';
 import 'package:jiko_langu/src/widgets/app_text.dart';
@@ -29,7 +27,6 @@ class _RegistrationState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
-      bgcolor: AppConst.black,
       child: Form(
           key: _formKey,
           child: Column(
@@ -119,8 +116,7 @@ class _RegistrationState extends State<Registration> {
                     fillcolor: AppConst.secondary,
                   ),
                   GestureDetector(
-                    onTap: () =>
-                        Navigator.pushNamed(context, RouteNames.login),
+                    onTap: () => Navigator.pushNamed(context, RouteNames.login),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 120),
                       child: AppText(
@@ -130,7 +126,9 @@ class _RegistrationState extends State<Registration> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Container(
                     height: 50,
                     width: 370,
@@ -147,8 +145,7 @@ class _RegistrationState extends State<Registration> {
                           AppSnackbar(
                             isError: false,
                             response: response.toString(),
-                          ).show(
-                              context); // handle successful login response
+                          ).show(context); // handle successful login response
                           Navigator.pushNamedAndRemoveUntil(
                               context, RouteNames.login, (_) => false);
                         } catch (e) {
