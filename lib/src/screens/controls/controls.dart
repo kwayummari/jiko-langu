@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:jiko_langu/src/utils/app_const.dart';
 import 'package:jiko_langu/src/widgets/app_base_screen.dart';
+import 'package:jiko_langu/src/widgets/app_input_text.dart';
 import 'package:jiko_langu/src/widgets/app_text.dart';
+import 'package:jiko_langu/src/widgets/app_toggle_button.dart';
 
 class Control extends StatefulWidget {
   const Control({Key? key}) : super(key: key);
@@ -66,6 +68,7 @@ class _ControlState extends State<Control> {
       print('Not connected to a Bluetooth device.');
     }
   }
+
   bool value = false;
   FlutterBluetoothSerial bluetooth = FlutterBluetoothSerial.instance;
   @override
@@ -98,6 +101,8 @@ class _ControlState extends State<Control> {
     super.dispose();
   }
 
+  TextEditingController temp = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
@@ -121,8 +126,22 @@ class _ControlState extends State<Control> {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 20,
             ),
+            AppToggleButton(
+              title: 'Bluetooth',
+              value: value,
+              onChanged: _toggleBluetooth,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            AppInputText(
+                textfieldcontroller: temp,
+                isemail: false,
+                fillcolor: AppConst.transparent,
+                label: 'Enter Temperature',
+                obscure: false),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
