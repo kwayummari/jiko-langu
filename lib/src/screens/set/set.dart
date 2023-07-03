@@ -14,20 +14,26 @@ class _setTimerState extends State<setTimer> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
-      bgcolor: AppConst.black,
-        child:  Column(
+        bgcolor: AppConst.black,
+        child: Column(
           children: [
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Row(
               children: [
-                Icon(Icons.arrow_back, color: AppConst.primary,),
-                AppText(txt: 'Set Timer', size: 15, color: AppConst.primary,),
-                Spacer(),
-                AppText(txt: 'ID 2300998', size: 15, color: AppConst.primary,)
+                Icon(
+                  Icons.arrow_back,
+                  color: AppConst.primary,
+                ),
+                AppText(
+                  txt: 'Set Timer',
+                  size: 15,
+                  color: AppConst.primary,
+                ),
               ],
             ),
           ],
-        )
-    );
+        ));
   }
 }

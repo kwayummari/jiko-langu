@@ -28,6 +28,6 @@ class _helpState extends State<help> {
             ),
           ],
         )
-    );;
+    );
   }
 }
