@@ -108,7 +108,7 @@ class _LoginState extends State<Login> {
                               final response = await _apiService.login(context,
                                   id.text.toString(), password.text.toString());
                               AppSnackbar(
-                                isError: response.toString() == 'success'
+                                isError: response.toString() != 'wrong'
                                     ? false
                                     : true,
                                 response: response.toString(),
@@ -117,11 +117,10 @@ class _LoginState extends State<Login> {
                                 final prefs =
                                     await SharedPreferences.getInstance();
                                 await prefs.setString('id', id.text.toString());
-                                if (response.toString() == 'success')
-                                  Navigator.pushNamedAndRemoveUntil(
-                                      context,
-                                      RouteNames.bottomNavigationBar,
-                                      (_) => false);
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    RouteNames.bottomNavigationBar,
+                                    (_) => false);
                               }
 
                               // handle successful login response
