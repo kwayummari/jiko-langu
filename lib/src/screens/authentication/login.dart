@@ -113,11 +113,10 @@ class _LoginState extends State<Login> {
                                     : true,
                                 response: response.toString(),
                               ).show(context);
-                              if (response.toString() == 'success') {
+                              if (response.toString() != 'wrong') {
                                 final prefs =
                                     await SharedPreferences.getInstance();
-                                await prefs.setString(
-                                    'email', id.text.toString());
+                                await prefs.setString('id', id.text.toString());
                                 if (response.toString() == 'success')
                                   Navigator.pushNamedAndRemoveUntil(
                                       context,
