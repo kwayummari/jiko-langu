@@ -8,13 +8,15 @@ class registrationService {
   Api api = Api();
 
   Future registration(BuildContext context, String email, String password,
-      String fullname, String region) async {
+      String phone, String fullname, String id) async {
     Map<String, dynamic> data = {
-      'email': email.toString(),
-      'fullname': fullname.toString(),
-      'region': region.toString(),
+      'address': email.toString(),
+      'name': fullname.toString(),
+      'id': id.toString(),
       'password': password.toString(),
+      'phone': phone.toString()
     };
+    print(data);
     final response = await api.post('registration.php', data);
     return response;
   }

@@ -138,10 +138,11 @@ class _RegistrationState extends State<Registration> {
                         try {
                           final response = await _apiService.registration(
                               context,
-                              name.text,
-                              id.text,
+                              address.text,
+                              password.text,
                               phone.text,
-                              address.text);
+                              name.text,
+                              id.text);
                           AppSnackbar(
                             isError: false,
                             response: response.toString(),
