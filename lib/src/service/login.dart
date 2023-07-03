@@ -7,13 +7,13 @@ class loginService {
   static String baseUrl = dotenv.env['API_SERVER'] ?? 'http://noapi';
   Api api = Api();
 
-  Future login(BuildContext context, String email, String password) async {
+  Future login(BuildContext context, String id, String password) async {
     Map<String, dynamic> data = {
-      'email': email,
+      'user_id': id.toString(),
       'password': password,
     };
 
-    final response = await api.post('login.php', data);
+    final response = await api.post('auth/login.php', data);
     return response;
   }
 }
