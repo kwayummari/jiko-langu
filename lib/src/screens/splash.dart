@@ -28,11 +28,9 @@ class _SplashState extends State<Splash> {
       await Future.delayed(Duration(seconds: 1), () {});
       if (id == null) {
         Navigator.pushNamed(context, RouteNames.login);
-      } else if (id != null ) {
-            Navigator.pushNamedAndRemoveUntil(
-                                    context,
-                                    RouteNames.bottomNavigationBar,
-                                    (_) => false);
+      } else if (id != null) {
+        Navigator.pushNamedAndRemoveUntil(
+            context, RouteNames.bottomNavigationBar, (_) => false);
       }
     });
   }
@@ -52,7 +50,9 @@ class _SplashState extends State<Splash> {
       bgcolor: AppConst.primary,
       child: Column(
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height /2.5,),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 2.5,
+          ),
           Center(
               child: SpinKitHourGlass(
             duration: const Duration(seconds: 3),
