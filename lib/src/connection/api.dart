@@ -11,7 +11,7 @@ class Api {
       final response = await http.head(Uri.parse(baseUrl));
       return response.statusCode == 200;
     } catch (e) {
-     throw Exception("Check your internet connection");
+      throw Exception("Check your internet connection");
     }
   }
 
@@ -40,9 +40,9 @@ class Api {
 
   // POST Request
   Future<dynamic> post(String endPoint, Map<String, dynamic> data) async {
-    if (!(await hasInternetConnection())) {
-      throw Exception("No internet connection");
-    }
+    // if (!(await hasInternetConnection())) {
+    //   throw Exception("No internet connection");
+    // }
     try {
       final response = await http
           .post(
