@@ -106,286 +106,265 @@ class _ControlState extends State<Control> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
-        bgcolor: AppConst.black,
         child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            ListTile(
-              leading: CircleAvatar(backgroundColor: AppConst.greyshade200),
-              title: AppText(
-                txt: 'Welcome Kwayu',
-                size: 15,
-                color: AppConst.secondary,
-              ),
-              subtitle: AppText(
-                txt: 'ID123456',
-                size: 15,
-                color: AppConst.secondary,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-            width: 350,
-            height: 100,
-            decoration: BoxDecoration(
-              color: AppConst.primary,
-              borderRadius: BorderRadius.all(
-                Radius.circular(20.0),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: AppText(
-                txt:
-                    'Welcome to JIKO LANGU! Control your stove at your pace and prepare your food freely as you wish',
-                size: 20,
-                color: AppConst.secondary,
-              ),
-            ),
+      children: [
+        SizedBox(
+          height: 20,
+        ),
+        ListTile(
+          leading: CircleAvatar(backgroundColor: AppConst.greyshade200),
+          title: AppText(
+            txt: 'Welcome Kwayu',
+            size: 15,
+            color: AppConst.black,
           ),
-            SizedBox(height: 20,),
-            AppToggleButton(
-              title: 'Bluetooth',
-              value: value,
-              onChanged: _toggleBluetooth,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            AppInputText(
-                textfieldcontroller: temp,
-                isemail: false,
-                fillcolor: AppConst.transparent,
-                label: 'Enter Temperature',
-                obscure: false),
-                SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () => _sendDigit(0),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.primary,
-                      child: AppText(
-                        txt: 'On',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
-                      ),
-                    ),
+          subtitle: AppText(
+            txt: 'ID123456',
+            size: 15,
+            color: AppConst.black,
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        AppToggleButton(
+          title: 'Bluetooth',
+          value: value,
+          onChanged: _toggleBluetooth,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        AppInputText(
+            textfieldcontroller: temp,
+            isemail: false,
+            fillcolor: AppConst.transparent,
+            label: 'Enter Temperature',
+            obscure: false),
+        SizedBox(
+          height: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () => _sendDigit(0),
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundColor: AppConst.primary,
+                  child: AppText(
+                    txt: 'On',
+                    size: 30,
+                    color: AppConst.black,
+                    weight: FontWeight.w900,
                   ),
-                  Container(
-                    padding: EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppConst.primary,
-                        width: 3.0,
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () => _sendDigit(1),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppConst.transparent,
-                        child: AppText(
-                          txt: '1',
-                          size: 30,
-                          color: AppConst.secondary,
-                          weight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppConst.primary,
-                        width: 3.0,
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () => _sendDigit(2),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppConst.transparent,
-                        child: AppText(
-                          txt: '2',
-                          size: 30,
-                          color: AppConst.secondary,
-                          weight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppConst.primary,
-                        width: 3.0,
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () => _sendDigit(3),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppConst.transparent,
-                        child: AppText(
-                          txt: '3',
-                          size: 30,
-                          color: AppConst.secondary,
-                          weight: FontWeight.w900,
-                        ),
-                      ),
+              Container(
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppConst.primary,
+                    width: 3.0,
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () => _sendDigit(1),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppConst.transparent,
+                    child: AppText(
+                      txt: '1',
+                      size: 30,
+                      color: AppConst.black,
+                      weight: FontWeight.w900,
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppConst.primary,
-                        width: 3.0,
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () => _sendDigit(4),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppConst.transparent,
-                        child: AppText(
-                          txt: '4',
-                          size: 30,
-                          color: AppConst.secondary,
-                          weight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppConst.primary,
-                        width: 3.0,
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () => _sendDigit(5),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppConst.transparent,
-                        child: AppText(
-                          txt: '5',
-                          size: 30,
-                          color: AppConst.secondary,
-                          weight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppConst.primary,
-                        width: 3.0,
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () => _sendDigit(6),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppConst.transparent,
-                        child: AppText(
-                          txt: '6',
-                          size: 30,
-                          color: AppConst.secondary,
-                          weight: FontWeight.w900,
-                        ),
-                      ),
+              Container(
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppConst.primary,
+                    width: 3.0,
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () => _sendDigit(2),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppConst.transparent,
+                    child: AppText(
+                      txt: '2',
+                      size: 30,
+                      color: AppConst.black,
+                      weight: FontWeight.w900,
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.all(3.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: AppConst.primary,
-                        width: 3.0,
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () => _sendDigit(7),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppConst.transparent,
-                        child: AppText(
-                          txt: '7',
-                          size: 30,
-                          color: AppConst.secondary,
-                          weight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () => _sendDigit(8),
-                    child: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: AppConst.grey,
-                      child: AppText(
-                        txt: 'Off',
-                        size: 30,
-                        color: AppConst.secondary,
-                        weight: FontWeight.w900,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ));
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppConst.primary,
+                    width: 3.0,
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () => _sendDigit(3),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppConst.transparent,
+                    child: AppText(
+                      txt: '3',
+                      size: 30,
+                      color: AppConst.black,
+                      weight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppConst.primary,
+                    width: 3.0,
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () => _sendDigit(4),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppConst.transparent,
+                    child: AppText(
+                      txt: '4',
+                      size: 30,
+                      color: AppConst.black,
+                      weight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppConst.primary,
+                    width: 3.0,
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () => _sendDigit(5),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppConst.transparent,
+                    child: AppText(
+                      txt: '5',
+                      size: 30,
+                      color: AppConst.black,
+                      weight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppConst.primary,
+                    width: 3.0,
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () => _sendDigit(6),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppConst.transparent,
+                    child: AppText(
+                      txt: '6',
+                      size: 30,
+                      color: AppConst.black,
+                      weight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: AppConst.primary,
+                    width: 3.0,
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () => _sendDigit(7),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppConst.transparent,
+                    child: AppText(
+                      txt: '7',
+                      size: 30,
+                      color: AppConst.black,
+                      weight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () => _sendDigit(8),
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundColor: AppConst.grey,
+                  child: AppText(
+                    txt: 'Off',
+                    size: 30,
+                    color: AppConst.black,
+                    weight: FontWeight.w900,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+      ],
+    ));
   }
 }
