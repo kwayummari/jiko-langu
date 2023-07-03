@@ -12,7 +12,7 @@ class registrationService {
     Map<String, dynamic> data = {
       'address': email.toString(),
       'name': fullname.toString(),
-      'id': id.toString(),
+      'user_id': id.toString(),
       'password': password.toString(),
       'phone': phone.toString()
     };
