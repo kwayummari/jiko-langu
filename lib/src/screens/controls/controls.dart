@@ -39,7 +39,8 @@ class _ControlState extends State<Control> {
         });
       }
 
-      BluetoothConnection.toAddress(selectedDevice!.address).then((newConnection) {
+      BluetoothConnection.toAddress(selectedDevice!.address)
+          .then((newConnection) {
         setState(() {
           connection = newConnection;
           isConnected = true;
@@ -53,22 +54,28 @@ class _ControlState extends State<Control> {
   }
 
   void _sendDigit(int digit) {
-  if (connection != null && connection!.isConnected) {
-    Uint8List data = Uint8List.fromList([digit]);
-    connection!.output.add(data);
-    connection!.output.allSent.then((_) {
-      print('Digit sent: $digit');
-    }).catchError((error) {
-      print('Failed to send digit: $error');
-    });
-  } else {
-    print('Not connected to a Bluetooth device.');
+    if (connection != null && connection!.isConnected) {
+      Uint8List data = Uint8List.fromList([digit]);
+      connection!.output.add(data);
+      connection!.output.allSent.then((_) {
+        print('Digit sent: $digit');
+      }).catchError((error) {
+        print('Failed to send digit: $error');
+      });
+    } else {
+      print('Not connected to a Bluetooth device.');
+    }
   }
-}
-
+  bool value = false;
+  FlutterBluetoothSerial bluetooth = FlutterBluetoothSerial.instance;
   @override
   void initState() {
     super.initState();
+    bluetooth.state.then((state) {
+      setState(() {
+        value = (state == BluetoothState.STATE_ON);
+      });
+    });
     _discoverDevices();
   }
 
@@ -79,22 +86,32 @@ class _ControlState extends State<Control> {
     }
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
-      bgcolor: AppConst.black,
+        bgcolor: AppConst.black,
         child: Column(
           children: [
-            SizedBox(height: 20,),
-            Row(
-              children: [
-                Icon(Icons.arrow_back, color: AppConst.primary,),
-                AppText(txt: 'JIKO LANGU', size: 15, color: AppConst.primary,),
-                Spacer(),
-                AppText(txt: 'ID 2300998', size: 15, color: AppConst.primary,)
-              ],
+            SizedBox(
+              height: 20,
             ),
-            SizedBox(height: 200,),
+            ListTile(
+              leading: CircleAvatar(backgroundColor: AppConst.greyshade200),
+              title: AppText(
+                txt: 'Welcome Kwayu',
+                size: 15,
+                color: AppConst.secondary,
+              ),
+              subtitle: AppText(
+                txt: 'ID123456',
+                size: 15,
+                color: AppConst.secondary,
+              ),
+            ),
+            SizedBox(
+              height: 200,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
@@ -105,7 +122,12 @@ class _ControlState extends State<Control> {
                     child: CircleAvatar(
                       radius: 40,
                       backgroundColor: AppConst.primary,
-                      child: AppText(txt: 'On',size: 30, color: AppConst.secondary, weight: FontWeight.w900,),
+                      child: AppText(
+                        txt: 'On',
+                        size: 30,
+                        color: AppConst.secondary,
+                        weight: FontWeight.w900,
+                      ),
                     ),
                   ),
                   Container(
@@ -131,7 +153,6 @@ class _ControlState extends State<Control> {
                       ),
                     ),
                   ),
-
                   Container(
                     padding: EdgeInsets.all(3.0),
                     decoration: BoxDecoration(
@@ -158,7 +179,9 @@ class _ControlState extends State<Control> {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
@@ -236,7 +259,9 @@ class _ControlState extends State<Control> {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
@@ -293,15 +318,21 @@ class _ControlState extends State<Control> {
                     child: CircleAvatar(
                       radius: 40,
                       backgroundColor: AppConst.grey,
-                      child: AppText(txt: 'Off',size: 30, color: AppConst.secondary, weight: FontWeight.w900,),
+                      child: AppText(
+                        txt: 'Off',
+                        size: 30,
+                        color: AppConst.secondary,
+                        weight: FontWeight.w900,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
           ],
-        )
-    );
+        ));
   }
 }
