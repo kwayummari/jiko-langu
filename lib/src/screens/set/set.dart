@@ -13,6 +13,7 @@ class setTimer extends StatefulWidget {
 
 class _setTimerState extends State<setTimer> {
   TextEditingController meal = TextEditingController();
+  TextEditingController time = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
@@ -45,6 +46,12 @@ class _setTimerState extends State<setTimer> {
             isemail: false,
             fillcolor: AppConst.transparent,
             label: 'Enter Meal',
+            obscure: false),
+            AppInputText(
+            textfieldcontroller: time,
+            isemail: false,
+            fillcolor: AppConst.transparent,
+            label: 'Enter time (in min)',
             obscure: false)
       ],
     ));
