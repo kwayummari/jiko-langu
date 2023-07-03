@@ -14,7 +14,6 @@ class _setTimerState extends State<setTimer> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
-        bgcolor: AppConst.black,
         child: Column(
           children: [
             SizedBox(
@@ -25,6 +24,9 @@ class _setTimerState extends State<setTimer> {
                 Icon(
                   Icons.arrow_back,
                   color: AppConst.primary,
+                ),
+                SizedBox(
+                  width: 20,
                 ),
                 AppText(
                   txt: 'Set Timer',
