@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jiko_langu/src/utils/app_const.dart';
 import 'package:jiko_langu/src/widgets/app_base_screen.dart';
+import 'package:jiko_langu/src/widgets/app_button.dart';
 import 'package:jiko_langu/src/widgets/app_input_text.dart';
 import 'package:jiko_langu/src/widgets/app_text.dart';
 
@@ -26,7 +27,7 @@ class _setTimerState extends State<setTimer> {
           children: [
             Icon(
               Icons.arrow_back,
-              color: AppConst.primary,
+              color: AppConst.black,
             ),
             SizedBox(
               width: 20,
@@ -34,7 +35,7 @@ class _setTimerState extends State<setTimer> {
             AppText(
               txt: 'Set Timer',
               size: 15,
-              color: AppConst.primary,
+              color: AppConst.black,
             ),
           ],
         ),
@@ -47,12 +48,18 @@ class _setTimerState extends State<setTimer> {
             fillcolor: AppConst.transparent,
             label: 'Enter Meal',
             obscure: false),
-            AppInputText(
+        AppInputText(
             textfieldcontroller: time,
             isemail: false,
             fillcolor: AppConst.transparent,
             label: 'Enter time (in min)',
-            obscure: false)
+            obscure: false),
+        AppButton(
+            onPress: () => null,
+            label: 'Set',
+            borderRadius: 10,
+            textColor: AppConst.black,
+            bcolor: AppConst.primary)
       ],
     ));
   }
