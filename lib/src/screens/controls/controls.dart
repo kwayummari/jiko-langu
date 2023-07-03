@@ -128,6 +128,26 @@ class _ControlState extends State<Control> {
             SizedBox(
               height: 20,
             ),
+            Container(
+            width: 350,
+            height: 100,
+            decoration: BoxDecoration(
+              color: AppConst.primary,
+              borderRadius: BorderRadius.all(
+                Radius.circular(20.0),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: AppText(
+                txt:
+                    'Welcome to JIKO LANGU! Control your stove at your pace and prepare your food freely as you wish',
+                size: 20,
+                color: AppConst.secondary,
+              ),
+            ),
+          ),
+            SizedBox(height: 20,),
             AppToggleButton(
               title: 'Bluetooth',
               value: value,
@@ -142,6 +162,9 @@ class _ControlState extends State<Control> {
                 fillcolor: AppConst.transparent,
                 label: 'Enter Temperature',
                 obscure: false),
+                SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
