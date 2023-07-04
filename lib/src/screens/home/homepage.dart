@@ -294,6 +294,7 @@ class _HomepageState extends State<Homepage> {
         SizedBox(
           height: 20,
         ),
+        
         Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Row(
