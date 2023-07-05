@@ -115,14 +115,17 @@ class _RegistrationState extends State<Registration> {
                     isemail: false,
                     fillcolor: AppConst.secondary,
                   ),
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, RouteNames.login),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 120),
-                      child: AppText(
-                        size: 15,
-                        txt: 'Already have an account? Sign In',
-                        color: AppConst.primary,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, RouteNames.login),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 120),
+                        child: AppText(
+                          size: 15,
+                          txt: 'Already have an account? Sign In',
+                          color: AppConst.primary,
+                        ),
                       ),
                     ),
                   ),

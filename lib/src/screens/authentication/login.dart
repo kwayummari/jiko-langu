@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                         fillcolor: AppConst.secondary,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 150),
+                        padding: const EdgeInsets.only(left: 30),
                         child: AppText(
                           txt: 'Forgot Password?',
                           size: 15,
@@ -140,15 +140,18 @@ class _LoginState extends State<Login> {
                     ],
                   ),
                 ),
-                GestureDetector(
-                  onTap: () =>
-                      Navigator.pushNamed(context, RouteNames.registration),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 120),
-                    child: AppText(
-                      size: 15,
-                      txt: 'Not a member? Create Account',
-                      color: AppConst.primary,
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: GestureDetector(
+                    onTap: () =>
+                        Navigator.pushNamed(context, RouteNames.registration),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 30),
+                      child: AppText(
+                        size: 15,
+                        txt: 'Not a member? Create Account',
+                        color: AppConst.primary,
+                      ),
                     ),
                   ),
                 ),
