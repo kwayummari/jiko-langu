@@ -118,12 +118,12 @@ class _HomepageState extends State<Homepage> {
         ListTile(
           leading: CircleAvatar(backgroundColor: AppConst.greyshade200),
           title: AppText(
-            txt: 'Welcome Kwayu',
+            txt: 'Welcome Nyala',
             size: 15,
             color: AppConst.black,
           ),
           subtitle: AppText(
-            txt: 'ID123456',
+            txt: 'ID123456789',
             size: 15,
             color: AppConst.black,
           ),
